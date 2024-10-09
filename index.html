@@ -37,10 +37,10 @@
             <span class="space"><span class="comments"></span></span><br>
             <span class="space"><span class="comments">我们的故事还短，只因相识未远</span></span><br>
             <span class="space"><span class="comments">我们的故事还长，只为来日方长</span></span><br>
-		    <span class="space"><span class="comments"></span></span><br>
-			<span class="space"><span class="comments">那么</span></span><br>
-			<span class="space"><span class="comments">请问</span></span><br>
-            <span class="space"><span class="comments"></span></span><br>
+<!--		    <span class="space"><span class="comments"></span></span><br>-->
+<!--			<span class="space"><span class="comments">那么</span></span><br>-->
+<!--			<span class="space"><span class="comments">请问</span></span><br>-->
+<!--            <span class="space"><span class="comments"></span></span><br>-->
         </div>
         <div id="code2" class="code" style="display: none;margin-top: 112.5px;">
             <span class="space"><span class="comments">你看你，又调皮了不是</span></span><br>
@@ -90,22 +90,15 @@
             var offsetX = $("#loveHeart").width() / 2;
             var offsetY = $("#loveHeart").height() / 2 - 55;
             adjustCodePosition();
-            $.getJSON("/Home/Liu/get_time", {}, function(data) {
-                console.log(data);
-                if(data.code == 200 && data.data.time == 0){
-                    $("#code").typewriter();
-                }else{
-                    adjustWordsPosition();
-                    // 秒级时间戳data.data.time转js的Date对象
-                    var together = new Date(data.data.time * 1000);
-                    timeElapse(together);
-                    setInterval(function () {
-                        timeElapse(together);
-                    }, 500);
-                    // 显示爱心
-                    startHeartAnimation();
-                }
-            });
+            adjustWordsPosition();
+            // 秒级时间戳data.data.time转js的Date对象
+            var together = new Date(1727782741 * 1000);
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+            // 显示爱心
+            startHeartAnimation();
         </script>
         <audio id="main_audio" autoplay="autoplay" preload="auto" loop="">
             <source src="" type="audio/mpeg">
